@@ -44,5 +44,5 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode) ;在编程模式下显示行号
 (setq-default display-line-numbers-width 3) ;行号显示区域大小
 ;; configuration for scheme lisp
-;; (setq scheme-program-name "mit-scheme")
+(setq scheme-program-name "mit-scheme")
 (provide 'init-code)

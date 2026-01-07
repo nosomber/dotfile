@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# 1. 确保 pywal 已经生成的颜色文件存在
+XRDB_FILE="$HOME/.cache/wal/xrdb_extra"
+
+if [ -f "$XRDB_FILE" ]; then
+    # 将颜色合并到 X 资源数据库
+    xrdb -merge "$XRDB_FILE"
+else
+    echo "错误: 找不到 $XRDB_FILE，请先运行一次 wal 命令"
+    exit 1
+fi
+
+# 2. 告诉 dwm 更新颜色
+# 方法 A：如果你的 dwm 支持信号重载（常用信号是 SIGUSR1）
+#pkill -USR1 dwm
+
+# 方法 B：如果方法 A 无效，使用 xdotool 模拟按下你 config.h 里的快捷键
+# 你的快捷键是 MODKEY + Control + \
+if command -v xdotool > /dev/null; then
+    # 这里的 super 是常用 Mod 键，如果你的 Mod 是 Alt，请改为 alt
+    xdotool key super+Control+backslash
+fi
+
+# 3. 刷新状态栏 (如果你使用了 dwmblocks 或类似工具)
+# pkill -RTMIN+10 dwmblocks  # 假设你的状态栏需要这个信号
+
+notify-send "DWM" "配色方案已同步"

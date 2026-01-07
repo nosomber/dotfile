@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+ln -sf ~/.cache/wal/picom.conf ~/.config/picom/picom.conf
+ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+
+# ln -sf ~/.cache/wal/pywal16.yml ~/.config/termusic/themes/pywal16.yml
+#
+recompileslock
+pgrep qutebrowser > /dev/null && qutebrowser ':config-source'
+
+pkill dunst; setsid -f dunst
+pkill picom
+picom -b --config ~/.config/picom/picom.conf
+
+/home/mi/scripts/refresh
+notify-send "wallpaper and colorscheme changed; setting rgb value"
+
+sudo openrgb --noautoconnect -c $(tail -c +2 ~/.cache/wal/rgb) -b 65
+
+

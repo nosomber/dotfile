@@ -5,6 +5,7 @@ call_menu() {
     [ "$(ps -ef | grep clash | awk '$8=="./clash-linux-amd64-v1.10.0"')" ] && echo ' close clash' || echo ' open clash'
     bluetoothctl info "C8:24:78:0A:50:5A" | grep -q "Connected: yes" && echo '󰂯 disconnect' || echo '󰂯 connect'
 		echo ' google'
+        echo '󱁤 toolbox'
 }
 
 
@@ -29,6 +30,8 @@ execute_menu() {
 		' google')
 			google-chrome-stable --proxy-server=socks5://127.0.0.1:7891
 			;;
+        '󱁤 toolbox')
+            /home/mi/.rec/jetbrains-toolbox-3.0.0.59313/bin/jetbrains-toolbox
     esac
 }
 
