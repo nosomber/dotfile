@@ -1,5 +1,5 @@
 
-export _bat='^sbat^^c#3B001B^^b#4865660x88^ 󰂀 ^c#3B001B^^b#4865660x99^ 79% '
+export _bat='^sbat^^c#3B001B^^b#4865660x88^ 󱈏 ^c#3B001B^^b#4865660x99^ 95% '
+export _vol='^svol^^c#442266^^b#7879560x88^   ^c#442266^^b#7879560x99^ -- '
 export _wifi='^swifi^^c#000080^^b#3870560x88^ ^c#000080^^b#3870560x99^BUCEA '
-export _vol='^svol^^c#442266^^b#7879560x88^  ^c#442266^^b#7879560x99^ 90 '
-export _date='^sdate^^c#4B005B^^b#7E51680x88^  ^c#4B005B^^b#7E51680x99^ 01/07 13:35 '
+export _date='^sdate^^c#4B005B^^b#7E51680x88^  ^c#4B005B^^b#7E51680x99^ 01/12 16:51 '
